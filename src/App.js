@@ -1,3 +1,5 @@
 export default function Square() {
-      return <image className="square">V</image>
+    return (
+        <image className="square">V</image >
+      )
 }
