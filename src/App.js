@@ -1,3 +1,3 @@
 export default function Square() {
-      return <button className="square">W</button> :>>
+      return <image className="square">V</image>
 }

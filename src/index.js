@@ -3,10 +3,12 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 import App from "./App";
+import MyComponent from "./AwesomeSauce";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <App />
+        <App />
+        <MyComponent/>
   </StrictMode>
 );
