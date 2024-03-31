@@ -4,11 +4,13 @@ import "./styles.css";
 
 import App from "./App";
 import StateExample from "./SpongeState";
+import NavigationBar from "./NavigationBar";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
     <StrictMode>
-    <App/>
+        <NavigationBar />
+        <App />
         <StateExample />
-  </StrictMode>
+    </StrictMode>
 );
