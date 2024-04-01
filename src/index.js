@@ -1,16 +1,36 @@
-import React, { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React, { Component, StrictMode } from "react";
+import ReactDOM from 'react-dom/client'
 import "./styles.css";
 
-import App from "./App";
-import StateExample from "./SpongeState";
-import NavigationBar from "./NavigationBar";
+import StateExample from "./components/SpongeState";
+import NavigationBar from "./components/NavigationBar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import BouncingDVDLogo from "./components/Bouncy";
 
-const root = createRoot(document.getElementById("root"));
-root.render(
-    <StrictMode>
-        <NavigationBar />
-        <App />
-        <StateExample />
-    </StrictMode>
+const router = createBrowserRouter([
+    {
+        element: <NavigationBar />,
+        children: [
+            {
+                path: "/",
+                element: <BouncingDVDLogo/>
+            },
+            {
+                path: "/about",
+                element: <h1>Nothing to see here.. yet :pp</h1>
+            },
+            {
+                path: "/spongee",
+                element: <StateExample />
+            }
+        ]
+    }
+]);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <body>
+            <RouterProvider router={router} />
+        </body>
+    </React.StrictMode>
 );
